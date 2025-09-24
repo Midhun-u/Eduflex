@@ -1,0 +1,55 @@
+@use '../variables';
+
+.card-container {
+    background-color: variables.$foreground-color;
+    width: 300px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1.5px solid variables.$foreground-color;
+    cursor: pointer;
+
+    &:hover {
+        border-color: variables.$primary-color;
+        transition: border-color 400ms linear;
+    }
+
+    .title-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+
+        span {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
+    .about-section {
+        font-size: 11px;
+        text-align: center;
+        padding: 0px 10px;
+    }
+
+    .icon{
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media(max-width : 600px){
+
+    .card-container{
+        width: 100%;
+
+        .about-section{
+            font-size: 10px;
+        }
+    }
+}

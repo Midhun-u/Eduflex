@@ -1,0 +1,162 @@
+@use '../variables';
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 5px;
+
+    .title-container{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0px;
+
+        h1{
+            font-size: 0.9rem;
+        }
+
+        .back-icon{
+            cursor: pointer;
+            display: none;
+        }
+    }
+}
+
+.profile-pic-container{
+    width: min-content;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .profile-pic{
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+    
+    .blur-profile-pic{
+        @extend .profile-pic;
+        opacity: 0.5;
+        cursor: pointer;
+    }
+
+    .camera-icon{
+        position: absolute;
+        cursor: pointer;
+    }
+}
+
+
+.user-credentials{
+    padding: 0px 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+    span{
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    label{
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    p{
+        font-size: 0.8rem;
+        padding-right: 20px;
+    }
+
+    .bio-input{
+        padding: 10px;
+        resize: none;
+        width: 60%;
+        height: 100px;
+        outline: none;
+        border: 1.1px solid variables.$disable-border-color;
+        border-radius: 5px;
+        @include variables.fontFamily();
+
+        &:focus{
+            border-color: variables.$primary-color;
+        }
+    }
+
+    .bio-input::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+.user-info-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 10px;
+
+    h1{
+        font-size: 0.9rem;
+    }
+
+    .user-info{
+        display: flex;
+        gap: 5px;
+        font-size: 0.8rem;
+    }
+
+    .icon{
+        color: variables.$primary-color;
+    }
+}
+
+.user-info{
+    div{
+        display: flex;
+        flex-direction: column;
+
+        p{
+            color: variables.$gray-text-color;
+            font-size: 0.7rem;
+        }
+    }
+}
+
+.button-container{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 10px 10px 10px;
+    width: 60%;
+}
+
+@media(max-width : 950px){
+
+    .container{
+        .title-container{
+            .back-icon{
+                display: inline;
+            }
+        }
+    }
+
+}
+
+@media(max-width : 600px){
+
+    .user-credentials{
+        .bio-input{
+            width: 100%;
+        }
+    }
+
+    .button-container{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

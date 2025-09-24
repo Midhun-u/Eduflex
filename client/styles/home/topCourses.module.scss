@@ -1,0 +1,54 @@
+@use '../variables';
+
+
+.course-section{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+
+.title-section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1{
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+
+.course-list{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width : 800px){
+
+    .title-section{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+}
+
+@media(max-width : 600px){
+
+    .course-section{
+        width: 95%;
+    }
+
+}

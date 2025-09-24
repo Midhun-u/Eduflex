@@ -1,0 +1,128 @@
+@use '../variables';
+
+.container {
+    margin-top: 30px;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        font-size: 1rem;
+    }
+}
+
+.user-rate-container {
+    width: 50%;
+    height: auto;
+    min-height: 70px;
+    background-color: variables.$foreground-color;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.user-rate-container .user-profile {
+    .profile-pic {
+        border-radius: 50%;
+    }
+}
+
+.rate-details{
+    width: 100%;
+}
+
+.user-details {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-right: 40px;
+    position: relative;
+
+    span {
+        font-size: 0.8rem;
+        font-weight: 600;
+        overflow: hidden;
+        max-width: 200px;
+        height: 20px;
+    }
+
+    .delete-icon{
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        top: 0px;
+        color: variables.$primary-color;
+    }
+}
+
+.rate-comment {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: variables.$gray-text-color;
+    overflow: hidden;
+}
+
+.rate-input-container {
+    margin-top: 8px;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.rate-comment-input {
+    width: 50%;
+    resize: none;
+    border: none;
+    background-color: variables.$foreground-color;
+    @include variables.fontFamily();
+    padding: 10px 60px 10px 10px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.rate-comment-input::-webkit-scrollbar {
+    display: none;
+}
+
+@media(max-width : 1000px) {
+    .rate-comment-input {
+        width: 100%;
+    }
+}
+
+@media(max-width : 950px) {
+
+    .user-rate-container {
+        width: 100%;
+    }
+
+}
+
+@media(max-width : 800px) {
+    .container {
+        width: 100%;
+    }
+
+    .user-rate-container .user-profile {
+        .profile-pic {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+@media(max-width : 500px) {
+
+    .user-details {
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0px;
+    }
+
+}

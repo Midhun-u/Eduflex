@@ -1,0 +1,108 @@
+@use '../variables';
+
+@mixin setFontWeight($fontWeight : fontWeight) {
+    font-weight: $fontWeight;
+}
+
+%container-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%container-size {
+    width: 100%;
+    height: 100%;
+}
+
+%min-font-weight {
+    @include setFontWeight(400)
+}
+
+%normal-font-weight {
+    @include setFontWeight(500)
+}
+
+%high-font-weight {
+    @include setFontWeight(600)
+}
+
+
+.container {
+    @extend %container-style;
+    @extend %container-size;
+    padding: 20px 5px;
+    height: auto;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.container::-webkit-scrollbar{
+    display: none
+}
+
+
+.image-section {
+    @extend %container-style;
+    @extend %container-size;
+
+    // sign image
+    .sign-image {
+        width: 50%;
+        height: 70%;
+    }
+}
+
+
+.form-section {
+    @extend %container-style;
+    @extend %container-size;
+    @extend %min-font-weight;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0px 10px;
+
+    h1 {
+        font-size: clamp(0.8rem, 1.2rem, 1.3rem);
+    }
+
+    p {
+        font-size: clamp(11px, 11px, 12px);
+        padding: 0px 50px;
+        text-align: center;
+    }
+}
+
+
+@media(max-width : 1000px) {
+
+    .image-section {
+        display: none;
+    }
+
+    .form-section{
+        padding: 0px 100px;
+    }
+
+}
+
+
+@media(max-width : 700px){
+
+   .form-section{
+        padding: 0px 10px;
+
+        P{
+            padding: 0px 10px;
+        }
+    } 
+
+}
+
+@media(max-width : 500px){
+
+    .form-section{
+        padding: 0px 10px;
+    }
+
+}

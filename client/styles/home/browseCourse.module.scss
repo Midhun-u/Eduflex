@@ -1,0 +1,156 @@
+@use '../variables';
+
+%container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    @extend %container-center;
+    margin-top: 40px;
+    height: auto;
+    width: 100%;
+}
+
+
+.section-one {
+    width: 100%;
+    height: 100%;
+    @extend %container-center;
+    flex-direction: column;
+    position: relative;
+
+    .image {
+        width: 30%;
+        height: 30%;
+
+    }
+
+    .courses-number {
+        padding: 20px;
+        background-color: variables.$foreground-color;
+        position: absolute;
+        bottom: 0px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .course-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        p {
+            font-size: 13px;
+            padding-right: 10px;
+        }
+
+        strong {
+            font-size: 18px;
+        }
+    }
+}
+
+
+.section-two {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+
+    .heading {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .primary-text {
+        color: variables.$primary-color;
+    }
+
+    p {
+        margin-top: 20px;
+        padding: 0px 250px 0px 0px;
+        font-size: 15px;
+        text-align: left;
+    }
+}
+
+@media(max-width : 1000px) {
+
+    .container {
+        @extend %container-center;
+        flex-direction: column-reverse;
+        margin-top: 40px;
+        height: auto;
+        width: 100%;
+        row-gap: 20px;
+    }
+
+    .section-two {
+        align-items: center;
+        text-align: center;
+
+        p {
+            text-align: center;
+            padding: 0px 20px;
+            margin-top: 5px;
+        }
+    }
+
+    .section-one{
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media(max-width : 700px){
+
+    .section-one{
+        .image{
+            width: 50%;
+            height: 50%;
+        }
+    }
+
+}
+
+@media(max-width : 500px){
+    .section-one{
+        .image{
+            width: 60%;
+            height: 60%;
+        }
+    }
+
+    .courses-number {
+        padding: 10px;
+        background-color: variables.$foreground-color;
+        position: absolute;
+        bottom: 0px;
+        margin: 0px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .course-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        p {
+            font-size: 12px;
+            padding-right: 0px;
+        }
+
+        strong {
+            font-size: 16px;
+        }
+    }
+}

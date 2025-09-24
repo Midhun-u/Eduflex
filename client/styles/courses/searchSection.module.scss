@@ -1,0 +1,90 @@
+@use '../variables';
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    flex-direction: column;
+}
+
+
+.input-box-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 60%;
+    height: auto;
+    position: relative;
+}
+
+
+.input-search-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: variables.$primary-color;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    left: 10px;
+
+    .search-icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.query-container {
+    width: 60%;
+    height: auto;
+
+    .search-query-section {
+        width: max-content;
+        overflow: hidden;
+        margin-top: 10px;
+        padding: 7px 10px;
+        background-color: variables.$foreground-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .search-query {
+        font-size: 12px;
+    }
+}
+
+
+@media(max-width : 900px) {
+
+    .input-box-section {
+        flex-direction: column;
+    }
+
+    .input-search-circle {
+        top: 7px;
+    }
+
+}
+
+@media(max-width : 650px) {
+
+    .input-box-section {
+        gap: 10px;
+        width: 95%;
+    }
+
+    .query-container{
+        width: 95%;
+    }
+
+}

@@ -1,0 +1,42 @@
+@use '../variables';
+
+.container{
+    z-index: 8;
+    display: flex;
+}
+
+.youtube-player-container{
+    width: 500px;
+    height: auto;
+    background-color: variables.$foreground-color;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+
+    h1{
+        align-self: self-start;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
+.youtube-player{
+    border: none;
+    width: auto;
+    height: auto;
+    aspect-ratio: 14 / 7;
+    border-radius: 5px;
+}
+
+@media(max-width : 550px){
+
+    .youtube-player-container{
+        width: 100%;
+    }
+
+}

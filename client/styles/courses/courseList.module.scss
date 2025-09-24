@@ -1,0 +1,35 @@
+@use '../variables';
+
+
+.container {
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.course-list-container {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media(max-width : 600px){
+
+    .course-list{
+        justify-content: center;
+    }
+
+}

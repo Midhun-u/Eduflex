@@ -1,0 +1,137 @@
+@use '../variables';
+
+.container{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    label{
+        font-size: 0.8rem;
+    }
+
+    .description-input{
+        @include variables.fontFamily();
+        outline: none;
+        padding: 5px 10px;
+        width: 100%;
+        resize: none;
+        height: 100px;
+        border: 1.1px solid variables.$disable-border-color;
+        border-radius: 5px;
+    }
+
+    .description-input::-webkit-scrollbar{
+        display: none;
+    }
+
+    .description-input:focus{
+        border-color: variables.$primary-color;
+    }
+}
+
+.thumbnail-container{
+    width: 300px;
+    height: 150px;
+    border: 1.1px solid variables.$disable-border-color;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .thumbnail{
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        z-index: 7;
+        aspect-ratio: 2 / 1;
+    }
+
+    p{
+        color: variables.$gray-text-color;
+        font-size: 0.7rem;
+    }
+
+    .remove-icon{
+        z-index: 8;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+
+    .file-upload-container{
+        width: 100%;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.preview-container{
+    
+    label{
+        font-size: 0.8rem;
+    }
+
+    .preview-expand{
+        width: 300px;
+        height: 150px;
+    }
+
+    .youtube-player{
+        width: 100%;
+        height: auto;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .preview-input-container{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        gap: 10px;
+    }
+}
+
+.price-input{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label{
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width : 400px){
+
+    .thumbnail-container{
+        width: 100%;
+    }
+
+    .preview-container{
+        .preview-expand{
+            width: 100%;
+        }
+    }
+
+}

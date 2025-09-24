@@ -1,0 +1,461 @@
+@use '../variables';
+
+$disable-button-background : #383838;
+$disable-button-textColor : #888888;
+
+%button-basic-style {
+    border: none;
+    cursor: pointer;
+    @include variables.fontFamily;
+}
+
+%sign-button-style {
+    width: 100%;
+    height: 40px;
+    font-size: 0.9rem;
+    @extend %button-basic-style;
+    border-radius: 5px;
+}
+
+
+.sign-button {
+    @extend %sign-button-style;
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+}
+
+
+.disable-sign-button {
+    @extend %sign-button-style;
+    background-color: $disable-button-background;
+    color: $disable-button-textColor;
+    cursor: not-allowed;
+}
+
+
+.google-button {
+    width: 100%;
+    height: 40px;
+    background-color: variables.$foreground-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    @extend %button-basic-style;
+}
+
+
+.otp-submit-button {
+    width: 100%;
+    height: 40px;
+    background-color: variables.$primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: variables.$foreground-color;
+    @extend %button-basic-style;
+}
+
+
+.sign-navigation {
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid variables.$primary-color;
+    background-color: variables.$foreground-color;
+    border-radius: 5px;
+    @include variables.fontFamily;
+    cursor: pointer;
+}
+
+
+.course-navigation-button {
+    @extend %button-basic-style;
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    &:active {
+        background-color: $disable-button-background;
+    }
+}
+
+
+.browse-courses-button {
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+    @extend %button-basic-style;
+    padding: 10px 20px;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+
+.course-search-button {
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+    height: 40px;
+    @extend %button-basic-style;
+    padding: 0px 40px;
+    border-radius: 5px;
+}
+
+.see-all-button {
+    width: 20%;
+    height: 35px;
+    @extend %button-basic-style;
+    margin-top: 10px;
+    border-radius: 30px;
+    background-color: variables.$foreground-color;
+    color: variables.$dark-foreground;
+    border: 1.5px solid variables.$foreground-color;
+    transition: border-color 300ms linear;
+
+    &:hover {
+        border-color: variables.$primary-color;
+        transition: border-color 300ms linear;
+    }
+}
+
+
+.enroll-button {
+    @extend %button-basic-style;
+    padding: 9px;
+    width: 150px;
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.cart-button {
+    width: 100%;
+    padding: 9px;
+    @extend %button-basic-style;
+    border-radius: 5px;
+    color: variables.$dark-foreground;
+    background-color: inherit;
+    border: 1.1px solid variables.$disable-border-color ;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.cart-success-button{
+    @extend .cart-button;
+    cursor: not-allowed;
+}
+
+.wishlist-button {
+    @extend .cart-button;
+}
+
+.wishlist-success-button {
+    @extend .wishlist-button;
+    border: 1.1px solid variables.$disable-border-color;
+    cursor: not-allowed;
+}
+
+.add-key-point {
+    @extend %button-basic-style;
+    padding: 10px 0px;
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.remove-button {
+    @extend %button-basic-style;
+    padding: 5px 10px;
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+    border-radius: 5px;
+}
+
+
+.add-chapter-button {
+    width: 100%;
+    padding: 7px 0px;
+    @extend %button-basic-style;
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+    border-radius: 5px;
+}
+
+
+.chapter-remove-button,
+.add-lecture-button,
+.remove-lecture-button {
+    padding: 5px;
+    @extend %button-basic-style;
+    background-color: variables.$foreground-color;
+    border-radius: 5px;
+}
+
+.add-lecture-button {
+    width: 200px;
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+    width: 100%;
+}
+
+.upload-course-button {
+    @extend %button-basic-style;
+    width: 50%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+}
+
+
+.add-preview-button {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    @extend %button-basic-style;
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+}
+
+
+.remove-preview-button {
+    @extend %button-basic-style;
+    max-width: 200px;
+    padding: 5px 10px;
+    color: variables.$foreground-color;
+    background-color: variables.$primary-color;
+    border-radius: 10px;
+}
+
+
+.load-course-button {
+    padding: 5px 30px;
+    @extend %button-basic-style;
+    border-radius: 20px;
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+}
+
+.edit-button {
+    @extend %button-basic-style;
+    padding: 5px;
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+    border-radius: 5px;
+}
+
+.delete-course-button-one {
+    @extend %button-basic-style;
+    width: 100px;
+    padding: 7px 0px;
+    border-radius: 5px;
+    background-color: variables.$background-color;
+}
+
+.delete-course-button-two {
+    @extend .delete-course-button-one;
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+}
+
+.load-button {
+    @extend %button-basic-style;
+    padding: 5px 20px;
+    border-radius: 50px;
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+    font-size: 0.8rem;
+}
+
+.refresh-button {
+    padding: 7px 20px;
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+    border-radius: 50px;
+    @extend %button-basic-style;
+}
+
+.payment-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    @extend %button-basic-style;
+    margin-top: 13px;
+    background-color: variables.$primary-color;
+    padding: 7px 10px;
+    border-radius: 10px;
+    color: variables.$foreground-color;
+}
+
+.course-nav-button {
+    @extend .payment-button;
+    margin-top: 0px;
+    background-color: variables.$foreground-color;
+    border: 1.1px solid variables.$disable-border-color;
+    color: variables.$dark-foreground;
+}
+
+.learn-button {
+    @extend %button-basic-style;
+    width: 100%;
+    padding: 5px 0px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.lecture-complete-button {
+    @extend %button-basic-style;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    background-color: variables.$foreground-color;
+    border-radius: 5px;
+    align-self: flex-end;
+    border: 1.1px solid variables.$dark-foreground;
+}
+
+.lecture-completed-button {
+    @extend .lecture-complete-button;
+    border: none;
+    background-color: variables.$success-color;
+    color: variables.$foreground-color;
+}
+
+.rate-send-button {
+    @extend %button-basic-style;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+}
+
+.course-review-button {
+    @extend .learn-button;
+    background-color: variables.$success-color;
+    color: variables.$foreground-color;
+}
+
+.edit-course-button {
+    width: 100%;
+    padding: 8px 10px;
+    @extend %button-basic-style;
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+    border-radius: 5px;
+}
+
+.profile-edit-button {
+    padding: 7px 10px;
+    width: 50%;
+    @extend %button-basic-style;
+    background-color: variables.$dark-foreground;
+    color: variables.$foreground-color;
+    border-radius: 5px;
+}
+
+.save-button,
+.cancel-button {
+    @extend %button-basic-style;
+    padding: 7px 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.save-button {
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+}
+
+.pay-button {
+    width: 100%;
+    padding: 10px;
+    @extend %button-basic-style;
+    background-color: variables.$primary-color;
+    color: variables.$foreground-color;
+    border-radius: 10px;
+    border: 1.1px solid variables.$primary-color;
+}
+
+.payment-cancel-button {
+    @extend .pay-button;
+    background-color: variables.$foreground-color;
+    color: variables.$dark-foreground;
+    border: 1.1px solid variables.$disable-border-color;
+}
+
+.purchased-button {
+    @extend %button-basic-style;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    gap: 5px;
+    border: 1.1px solid variables.$disable-border-color;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+@media(max-width : 1000px) {
+
+    .upload-course-button {
+        width: 70%;
+    }
+
+    .rate-send-button {
+        width: 100%;
+    }
+}
+
+@media(max-width : 900px) {
+
+    .course-search-button {
+        width: 100%;
+    }
+
+}
+
+@media(max-width : 700px) {
+
+    .upload-course-button {
+        width: 100%;
+    }
+
+}
+
+@media(max-width : 600px) {
+
+    .see-all-button {
+        width: 40%;
+    }
+
+    .enroll-button {
+        width: 100%;
+    }
+
+}
+
+@media(max-width : 400px) {
+
+    .save-button,
+    .cancel-button,
+    .profile-edit-button {
+        width: 100%;
+    }
+
+}

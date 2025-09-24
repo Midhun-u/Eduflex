@@ -1,4 +1,4 @@
-Eduflex
+# Eduflex
 
 Eduflex is Learning Management System (LMS) is a digital platform that helps create, manage, deliver, and track educational courses or training programs. It enables learners to access content anytime, while instructors or organizations can monitor progress, assessments, and performance.
 
@@ -78,6 +78,7 @@ This Learning Management System (LMS) is an online platform that makes teaching 
     - npm or yarn
     - Mongodb
     - Postgres
+    - Redis
     - Git
 
     * installation

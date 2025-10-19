@@ -1,0 +1,46 @@
+.container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    gap: 10px;
+
+    .title{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+@media(max-width : 800px){
+
+    .container{
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+}
+
+@media(max-width : 600px){
+
+    .list{
+        justify-content: center;
+    }
+
+}

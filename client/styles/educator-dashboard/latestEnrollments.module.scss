@@ -1,0 +1,58 @@
+@use '../variables';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+    overflow : scroll;
+
+    .heading {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: variables.$foreground-color;
+    width: min-content;
+    border-radius: 10px;
+}
+
+.title-container  , .details-container{
+    display: grid;
+    grid-template-columns: 300px 400px 100px;
+    gap: 10px;
+
+    p {
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+
+.details-container{
+    p{
+        font-weight: 400;
+    }
+
+    .student-details{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .profile-pic{
+        border-radius: 50%;
+    }
+}

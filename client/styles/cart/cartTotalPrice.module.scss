@@ -1,0 +1,54 @@
+@use '../variables';
+
+.container{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    padding: 0px 10%;
+}
+
+.price-card{
+    width: 40%;
+    height: auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: variables.$foreground-color;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .total-price{
+        display: flex;
+        justify-content: space-between;
+
+        p{
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}
+
+@media(max-width : 1000px){
+
+    .price-card{
+        width: 50%;
+    }
+
+}
+
+@media(max-width : 800px){
+
+    .price-card{
+        width: 100%;
+    }
+
+}
+
+@media(max-width : 500px){
+
+    .container{
+        padding: 0px;
+    }
+
+}

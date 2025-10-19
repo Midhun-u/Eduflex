@@ -1,0 +1,190 @@
+@use '../variables';
+
+%container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%link-style {
+    font-size: 0.8rem;
+    @include variables.fontFamily;
+    @extend %container-center;
+    text-decoration: none;
+    width: auto;
+    height: 100%;
+}
+
+
+.container {
+    width: 100%;
+    height: 60px;
+    @extend %container-center;
+    margin-top: 10px;
+}
+
+ 
+.nav {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    background-color: variables.$foreground-color;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px 0px 10px;
+}
+
+
+.logo-section {
+    width: 60px;
+    height: 60px;
+    @extend %container-center;
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+
+.links-section {
+    @extend %container-center;
+    column-gap: 20px;
+    width: auto;
+    height: 100%;
+
+    .menu-icon {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .close-menu-icon {
+        cursor: pointer;
+        display: none;
+        z-index: 9;
+    }
+}
+
+
+.link {
+    @extend %link-style;
+    color: variables.$dark-foreground;
+
+    .link-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.active-link{
+    .link-icon{
+        width: 20px;
+        height: 20px
+    }
+}
+
+.active-link {
+    @extend %link-style;
+    color: variables.$primary-color;
+    position: relative;
+
+    .active-link-line {
+        width: 100%;
+        height: 2px;
+        background-color: variables.$primary-color;
+        bottom: 5px;
+        position: absolute;
+    }
+}
+
+.responsive-navs {
+    width: 300px;
+    height: 100dvh;
+    top: 0px;
+    left: -500px;
+    transition: left 300ms linear;
+    row-gap: 20px;
+    position: absolute;
+    z-index: 8;
+    background-color: variables.$foreground-color;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+
+    .responsive-link {
+        text-decoration: none;
+        font-size: 14px;
+        color: variables.$dark-foreground;
+    }
+
+    .responsive-active-link {
+        color: variables.$primary-color;
+        text-decoration: none;
+        font-size: 14px;
+    }
+}
+
+.show-responsive-navbar{
+    @extend .responsive-navs;
+    left: 0px;
+    transition: left 300ms linear;
+}
+
+@media(max-width : 1070px) {
+
+    .link {
+        display: none;
+    }
+
+    .active-link {
+        display: none;
+    }
+
+    .links-section {
+
+        .menu-icon {
+            display: flex;
+        }
+
+        .close-menu-icon {
+            display: flex;
+        }
+    }
+
+}
+
+@media(max-width : 800px) {
+
+    .nav {
+        position: static;
+        width: 100%;
+    }
+
+    .logo-section {
+        width: 60px;
+        height: 60px;
+        @extend %container-center;
+
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+}
+
+
+@media(max-width : 600px) {
+
+    .responsive-navs {
+        width: 70vw;
+    }
+
+}

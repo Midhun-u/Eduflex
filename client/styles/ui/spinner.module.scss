@@ -1,0 +1,63 @@
+@use '../variables';
+
+
+.spinner-container{
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+}
+
+
+.spinner{
+    min-width : 15px;
+    min-height : 15px;
+    aspect-ratio:  1 / 1;
+    background-color: inherit;
+    border-radius: 50%;
+    border: 2px solid;
+    border-bottom: 0px;
+    border-right: 0px;
+    animation: spinAnimation 0.3s infinite;
+}
+
+
+.spinner-primary{
+    @extend .spinner;
+    border-color: variables.$primary-color;
+}
+
+
+.spinner-white{
+    @extend .spinner;
+    border-color: variables.$foreground-color;
+}
+
+
+.spinner-dark{
+    @extend .spinner;
+    border-color: variables.$dark-foreground;
+}
+
+@keyframes spinAnimation{
+
+   0%{
+    transform: rotate(40deg);
+   }
+
+   30%{
+    transform: rotate(90deg);
+   }
+
+   60%{
+    transform: rotate(180deg);
+   }
+
+   80%{
+    transform: rotate(250deg);
+   }
+
+   100%{
+    transform: rotate(360deg);
+   }
+
+}

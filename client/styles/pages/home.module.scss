@@ -1,0 +1,160 @@
+@use '../variables';
+
+%container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100vw;
+    height: auto;
+    background-color: variables.$background-color;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+
+    .about {
+        width: 60%;
+        text-align: center;
+        font-size: 15px;
+        margin-top: 15px;
+        color: variables.$gray-text-color;
+    }
+}
+
+.quality-section {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px; 
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    .sections {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        gap: 10px;
+
+        span {
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+
+.carrier-section {
+    @extend %container-center;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 5px;
+
+    .heading {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .about {
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+
+.carrier-options {
+    @extend %container-center;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+
+.carrier-option {
+    width: 50%;
+    height: auto;
+    background-color: variables.$foreground-color;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    border: 1.5px solid variables.$foreground-color;
+
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    h1 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 13px;
+        padding-right: 8%;
+    }
+
+    &:hover {
+        border: 1.5px solid variables.$primary-color;
+        transition: border 400ms linear;
+    }
+
+    .dashboard-link {
+        text-decoration: none;
+        color: variables.$foreground-color;
+        background-color: variables.$dark-foreground;
+        padding: 7px;
+        width: 150px;
+        @extend %container-center;
+        border-radius: 5px;
+        font-size: 14px
+    }
+
+    .enrollment-link {
+        @extend %container-center;
+        @extend .dashboard-link;
+        background-color: variables.$primary-color;
+    }
+}
+
+@media(max-width : 900px) {
+
+    .quality-section{
+        flex-direction: column;
+    }
+
+    .sections{
+        border-bottom: 1.5px solid variables.$disable-border-color;
+        padding: 10px 0px;
+    }
+
+    .carrier-options{
+        flex-direction: column;
+    }
+
+    .carrier-option{
+        width: 100%;
+    }
+}
+
+@media(max-width : 800px) {
+
+    .container {
+        .about {
+            width: 95%;
+        }
+    }
+
+}

@@ -1,0 +1,81 @@
+@use '../variables';
+
+.chapter-container {
+    padding: 10px;
+    background-color: variables.$foreground-color;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 30px 1fr 150px;
+    align-content: center;
+    cursor: pointer;
+
+    span {
+        font-size: 14px;
+        height: 20px;
+        overflow: hidden;
+    }
+
+    p{
+        font-size: 11px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: variables.$gray-text-color;
+    }
+
+    .arrow-icon {
+        transition: all 200ms linear;
+    }
+
+    .rotate-arrow-icon {
+        transform: rotate(180deg);
+        transition: all 200ms linear;
+    }
+}
+
+.lecture-container {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$foreground-color;
+    width: auto;
+    height: auto;
+
+    .icon{
+        flex-shrink: 0;
+    }
+
+    li {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        height: 0px;
+        overflow: hidden;
+        interpolate-size: allow-keywords;
+        transition: all 200ms linear;
+
+        span {
+            font-size: 12px;
+        }
+
+        p{
+            color: variables.$gray-text-color;
+            font-size: 12px;
+        }
+    }
+
+    .show-lecture {
+        height: auto;
+        padding: 10px 15px;
+        interpolate-size: allow-keywords;
+        transition: all 200ms linear;
+    }
+
+    .watch-link{
+        color: variables.$primary-color;
+        cursor: pointer;
+    }
+}

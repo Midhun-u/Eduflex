@@ -1,0 +1,94 @@
+@use '../variables';
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    width: 80%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+    background-color: variables.$foreground-color;
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+.course-details-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    p{
+        font-size: 0.7rem;
+        color: variables.$gray-text-color;
+    }
+
+    .price{
+        font-size: 1.9rem;
+    }
+
+    .course-details{
+        margin-top: 15px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .thumbnail{
+        border-radius: 5px;
+    }
+
+    .title{
+        font-size: 0.8rem;
+        padding-right: 10px;
+    }
+    
+}
+
+.checkout-form-container{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+@media(max-width : 1000px){
+
+    .container{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+}
+
+@media(max-width : 800px){
+
+    .container{
+        width: 100%;
+    }
+
+}
+
+@media(max-width : 500px){
+
+    .course-details-container{
+        padding: 5px;
+    }
+
+    .checkout-form-container{
+        padding: 5px;
+    }
+
+    .course-details{
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+
+}

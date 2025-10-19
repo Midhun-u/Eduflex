@@ -1,0 +1,12 @@
+$background-color : #F8F8F8;
+$foreground-color : #fff;
+$primary-color : #FF4500;
+$dark-foreground : 	#000000;
+$gray-text-color : hsl(0, 0%, 35%);
+$disable-border-color : #BDBDBD;
+$disable-icon-color : #808080;
+$success-color : #52b788;
+
+@mixin fontFamily(){
+    font-family: var(--font-poppins) , sans-serif;
+}

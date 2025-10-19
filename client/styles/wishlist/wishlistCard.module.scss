@@ -1,0 +1,92 @@
+@use '../variables';
+
+.container {
+    background-color: variables.$foreground-color;
+    width: 220px;
+    height: 280px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    border-radius: 5px;
+    transition: all 200ms linear;
+    gap: 1px;
+    position: relative;
+
+    &:hover {
+        transform: translateY(-10px);
+        transition: all 200ms linear;
+    }
+}
+
+.wishlist-icon-container{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: variables.$foreground-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    border-radius: 50%;
+}
+
+.thumbnail-container {
+    width: 100%;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .thumbnail {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        aspect-ratio: 1 / 0.6;
+    }
+}
+
+.details-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.title {
+    font-size: 13px;
+    font-weight: 500;
+    width: 100%;
+    max-height: 40px;
+    overflow: hidden;
+    padding: 0px 10px;
+    margin-top: 5px;
+}
+
+.educator {
+    font-size: 11px;
+    padding: 0px 10px;
+    color: variables.$gray-text-color;
+}
+
+.ratings {
+    padding: 0px 10px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    align-items: center;
+
+    p {
+        font-size: 12px;
+        font-weight: 600;
+    }
+}
+
+.price {
+    padding: 0px 10px;
+    margin-top: 3px;
+    font-size: 17px;
+    font-weight: 600;
+}

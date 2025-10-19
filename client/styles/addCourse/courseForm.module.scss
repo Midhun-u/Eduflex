@@ -1,0 +1,234 @@
+@use '../variables';
+
+%container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%column-direction {
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    padding: 20px;
+    @extend %column-direction;
+    gap: 35px;
+
+    label {
+        font-size: 13px;
+    }
+}
+
+
+.title {
+    @extend %column-direction;
+    gap: 5px;
+}
+
+
+.description {
+    @extend %column-direction;
+    gap: 5px;
+
+    .description-input {
+        resize: none;
+        width: 50%;
+        outline: none;
+        padding: 10px;
+        @include variables.fontFamily();
+        border: 1.3px solid variables.$foreground-color;
+        border-radius: 7px;
+        width: 50%;
+        height: 170px;
+
+        &:focus {
+            border-color: variables.$primary-color;
+        }
+    }
+
+    .description-input::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.selector {
+    border: 1.3px solid variables.$foreground-color;
+    background-color: variables.$foreground-color;
+    padding: 5px 35px 5px 5px;
+    font-size: 13px;
+    @include variables.fontFamily;
+    outline: none;
+    transition: border-color 200ms linear;
+    border-radius: 5px;
+    width: 100%;
+    appearance: none;
+    position: relative;
+    cursor: pointer;
+
+    &:focus {
+        border-color: variables.$primary-color;
+        transition: border-color 200ms linear;
+    }
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 7px;
+    cursor: pointer;
+}
+
+
+.language,
+.category,
+.chapter,
+.key-points,
+.add-chapter,
+.price {
+    gap: 5px;
+    @extend %column-direction;
+    width: 50%;
+}
+
+.price {
+    width: 100%;
+}
+
+
+.key-points-container,
+.add-chapter-container {
+    width: 100%;
+    @extend %column-direction;
+    gap: 10px;
+}
+
+
+.thumbnail,
+.preview {
+    @extend %column-direction;
+    gap: 10px;
+
+    .thumbnail-container,
+    .preview-container {
+        background-color: variables.$foreground-color;
+        width: 345px;
+        height: 245px;
+        border: 2px dotted variables.$disable-border-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 12px;
+        color: variables.$gray-text-color;
+        cursor: pointer;
+        border-radius: 10px;
+
+        .image {
+            width: 50px;
+            height: 50px;
+        }
+
+        .preview-image {
+            object-fit: contain;
+            width: 345px;
+            height: 245px;
+            border-radius: 10px;
+        }
+
+        .preview-video {
+            object-fit: contain;
+            width: 345px;
+            height: 245px;
+        }
+    }
+
+}
+
+@media(max-width : 1000px) {
+
+    
+    .form {
+        align-items: center;
+    }
+
+    
+    .language,
+    .category,
+    .chapter,
+    .key-points,
+    .add-chapter,
+    .price {
+        width: 70%;
+    }
+
+    
+    .description {
+        width: 70%;
+
+        .description-input {
+            width: 100%;
+        }
+    }
+
+  
+    .title {
+        width: 70%;
+    }
+
+}
+
+@media(max-width : 700px) {
+
+    
+    .language,
+    .category,
+    .chapter,
+    .key-points,
+    .add-chapter,
+    .price {
+        width: 100%;
+    }
+
+   
+    .description {
+        width: 100%;
+    }
+
+   
+    .title {
+        width: 100%;
+    }
+
+   
+    .form {
+        padding: 20px 10px 20px 10px;
+    }
+
+}
+
+@media(max-width : 500px) {
+
+   
+    .thumbnail,
+    .preview {
+
+        .thumbnail-container,
+        .preview-container {
+            width: 245px;
+            height: 145px;
+
+            .preview-image{
+                width: 245px;
+                height: 145px;
+            }
+
+            .preview-video{
+                width: 245px;
+                height: 145px;
+            }
+        }
+
+    }
+
+}

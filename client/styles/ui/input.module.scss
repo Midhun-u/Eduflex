@@ -1,0 +1,157 @@
+@use '../variables';
+
+%input-basic-style {
+    border: 1.3px solid variables.$foreground-color;
+    outline: none;
+    border-radius: 5px;
+    @include variables.fontFamily;
+    background-color: variables.$foreground-color;
+    height: 40px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 5px 10px 5px 40px;
+    font-size: 13px;
+    @extend %input-basic-style;
+
+    &:focus {
+        border: 1.3px solid variables.$primary-color;
+    }
+
+    &[type=password] {
+        padding: 5px 40px 5px 40px;
+    }
+}
+
+
+.form-checkbox {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.otp-input {
+    width: 100%;
+    padding: 5px 5px 5px 50px;
+    @extend %input-basic-style;
+}
+
+.course-search-input {
+    width: 100%;
+    padding: 10px 10px 10px 60px;
+    height: 45px;
+    position: relative;
+    @extend %input-basic-style;
+
+    &:focus {
+        border-color: variables.$primary-color;
+        transition: border-color 300ms linear;
+    }
+}
+
+
+.course-form-input {
+    padding: 9px 10px;
+    @extend %input-basic-style;
+    width: 50%;
+
+    &:focus {
+        border-color: variables.$primary-color;
+        transition: border-color 300ms linear;
+    }
+}
+
+
+.chapter-input,
+.key-point-input {
+    width: 100%;
+    padding: 9px 10px;
+    @extend %input-basic-style;
+
+    &:focus {
+        border-color: variables.$primary-color;
+        transition: border-color 300ms linear;
+    }
+}
+
+
+.lecture-input {
+    @extend %input-basic-style;
+    padding: 5px 10px;
+    border: 1.3px solid variables.$disable-border-color;
+
+    &:focus {
+        border-color: variables.$primary-color;
+    }
+}
+
+
+.preview-input{
+    width: 100%;
+    padding: 10px;
+    @extend %input-basic-style;
+    border-color: variables.$disable-border-color;
+
+    &:focus{
+        border-color: variables.$primary-color;
+    }
+}
+
+.edit-form-input{
+    padding: 4px 10px;
+    width: 100%;
+    @extend %input-basic-style;
+    border: 1.1px solid variables.$disable-border-color;
+
+    &:focus{
+        border-color: variables.$primary-color;
+    }
+}
+
+.edit-profile-input{
+    width: 60%;
+    @extend %input-basic-style;
+    border: 1.1px solid variables.$disable-border-color;
+    height: 35px;
+    padding: 0px 10px;
+
+    &:focus{
+        border-color: variables.$primary-color;
+    }
+}
+
+.change-password-input{
+    width: 100%;
+    padding: 8px 40px 8px 40px;
+    @extend %input-basic-style;
+    border: 1.1px solid variables.$disable-border-color;
+
+    &:focus{
+        border-color: variables.$primary-color;
+    }
+}
+
+@media(max-width : 1000px) {
+
+
+
+    .course-form-input {
+        width: 100%;
+    }
+
+}
+
+@media(max-width : 600px) {
+
+    .search-input-box {
+        width: 100%;
+    }
+
+    .edit-profile-input{
+        width: 100%;
+    }
+
+}
+

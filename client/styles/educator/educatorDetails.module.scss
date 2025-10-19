@@ -1,0 +1,105 @@
+@use '../variables';
+
+.container{
+    width: 80%;
+    height: auto;
+    background-color: variables.$background-color;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section{
+    display: flex;
+    gap: 25px;
+
+    .profile-pic-container{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .profile-pic{
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        height: auto;
+    }
+
+    .details-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+
+        .detail-name{
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .detail-bio{
+            font-size: 0.8rem;
+            font-weight: 400;
+            width: 90%;
+        }
+    }
+}
+
+
+.details-container{
+    .other-details{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+}
+
+.other-details{
+
+    div{
+        display: flex;
+        gap: 5px;
+        font-size: 0.8rem;
+        align-items: center;
+    }
+}
+
+@media(max-width : 1000px){
+
+    .main-section{
+        .details-container{
+            .detail-bio{
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+@media(max-width : 800px){
+
+    .container{
+        width: 100%;
+    }
+
+    .main-section{
+        flex-direction: column;
+
+        .profile-pic-container{
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .details-container{
+            .detail-bio{
+                padding-right: 20px;
+            }
+        }
+    }
+
+}

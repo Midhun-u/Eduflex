@@ -1,0 +1,19 @@
+
+.container{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: scroll;
+
+    .title{
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}

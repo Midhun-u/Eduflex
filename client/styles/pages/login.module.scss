@@ -1,0 +1,51 @@
+@use '../variables';
+
+%container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    height: 80dvh;
+    padding: 20px;
+    @extend %container-center;
+}
+
+.image-section {
+    @extend %container-center;
+    width: 100%;
+    height: 100%;
+
+    .login-image {
+        width: 40%;
+        height: 70%;
+    }
+}
+
+.form-section {
+    @extend %container-center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+
+    h1 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+@media(max-width : 1000px) {
+
+    .image-section {
+        display: none;
+    }
+
+}

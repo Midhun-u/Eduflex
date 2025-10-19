@@ -1,0 +1,14 @@
+{
+  "name": "wishlist-service",
+  "scripts": {
+    "dev": "bun run --hot ./index.ts",
+    "start": "bun index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.9.2",
+    "mongoose": "^8.17.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

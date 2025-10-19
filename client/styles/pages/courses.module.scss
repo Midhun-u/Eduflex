@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+
+@media(max-width : 1000px) {
+
+
+    .title-section {
+        .category-para {
+            padding-right: 5%;
+        }
+    }
+
+}

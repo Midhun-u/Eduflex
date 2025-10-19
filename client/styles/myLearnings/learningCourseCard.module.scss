@@ -1,0 +1,85 @@
+@use '../variables';
+
+.card-container {
+    background-color: variables.$foreground-color;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    gap: 4px;
+    transition: all 200ms linear;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+    .thumbnail {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        aspect-ratio: 1 / 0.6;
+    }
+
+    .details-container {
+        padding: 10px 10px;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+            font-size: 0.7rem;
+            color: variables.$gray-text-color;
+        }
+
+        span {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    }
+
+    .title {
+        font-size: 0.8rem;
+        font-weight: 500;
+        max-height: 40px;
+        overflow: hidden;
+    }
+
+    .progress-container{
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        margin-top: 10px;
+    }
+
+    .progress-details{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .progress{
+        width: 0%;
+        height: 7px;
+        background-color: variables.$primary-color;
+        margin-top: 5px;
+        border-radius: 10px;
+    }
+
+    .progress-success{
+        @extend .progress;
+        background-color: variables.$success-color;
+    }
+}
+
+@media(max-width : 300px){
+
+    .card-container{
+        width: 100%;
+    }
+
+}

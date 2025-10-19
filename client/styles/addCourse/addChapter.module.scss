@@ -1,0 +1,106 @@
+@use '../variables';
+
+
+.add-chapter-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .button-container{
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+}
+
+
+.add-chapter-list,
+.item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.item {
+
+    .remove-icon {
+        color: variables.$primary-color;
+    }
+
+    .section-one {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+
+    }
+
+    .section-two {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 50%;
+    }
+
+    .lecture-container{
+        display: flex;
+        gap: 10px;
+    }
+}
+
+
+.lecture-screen {
+    width: 100%;
+    height: 100%;
+    top: 50px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backdrop-filter: blur(10px);
+}
+
+
+.lecture-section {
+    width: 50%;
+    height: 70%;
+    background-color: variables.$foreground-color;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 50px 20px 10px 20px;
+    gap: 20px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+.lecture-section::-webkit-scrollbar {
+    display: none;
+}
+
+@media(max-width : 700px) {
+
+    .lecture-section {
+        width: 95%;
+    }
+
+}
+
+@media(max-height : 600px) {
+
+    .lecture-section {
+        height: 90%;
+    }
+
+}

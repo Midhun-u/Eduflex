@@ -1,0 +1,23 @@
+@use '../variables';
+
+
+.container{
+    background-color: variables.$background-color;
+    width: 100vw;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 50px auto;
+    grid-template-areas: 
+        'header header'
+        'side-bar main-content'
+    ;
+}
+
+@media(max-width : 1000px){
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+}

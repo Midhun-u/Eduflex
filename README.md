@@ -50,7 +50,7 @@ This Learning Management System (LMS) is an online platform that makes teaching 
 
     - Frontend : Next.js, TypeScript, SCSS, Redux, React Toastify(For toaster messages ), Lucide React(For icons)
 
-    - Backend : Node.js, Express.js, Bun.js, Hono.js , Typescript
+    - Backend : Node.js, Express.js, Bun.js, Hono.js , Typescript, REST API
 
     - Databases : MongoDB , PostgreSQL, Redis
 

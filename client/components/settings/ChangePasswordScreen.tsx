@@ -79,7 +79,7 @@ const ChangePasswordScreen = ({ setScreen }: ChangePasswordScreenProps) => {
             console.log(error)
 
             if(error?.response?.data){
-                toast.error(error.response.data.message)
+                toast.error(error.response.data.error)
                 return
             }
             toast.error("Couldn't change password")

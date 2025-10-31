@@ -11,6 +11,8 @@ export interface TopCouresType{
         educator : {
             id : string,
             fullname : string
-        }
+        },
+        totalRatings : number,
+        averageRatings : number
     }
 }

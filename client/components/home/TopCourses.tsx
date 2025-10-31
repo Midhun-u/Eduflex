@@ -8,6 +8,7 @@ import CourseCard from '../courses/CourseCard'
 import { getTopEnrollmentsApi } from '@/api/enrollment'
 import { getCourseDetailsApi } from '@/api/course'
 import { TopCouresType } from '@/types/topCourseType'
+import { getTotalRatingsApi } from '@/api/rate'
 
 const TopCourses = () => {
 
@@ -20,16 +21,22 @@ const TopCourses = () => {
         try {
             
             const enrollmentResult = await getTopEnrollmentsApi()
+            
             if(enrollmentResult?.success){
 
                 const topCourseListItems = await Promise.all(enrollmentResult?.topEnrollments.map(async(topEnrollment : {_id : string , totalEnrollments : number}) => {
 
                     const courseResult = await getCourseDetailsApi(topEnrollment._id , [ 'title' , 'thumbnail' , 'price' , 'educator'])
-                   
+                    const ratingsResult = await getTotalRatingsApi(topEnrollment?._id)
+                  
                     if(courseResult?.success){
                         return {
                             ...topEnrollment,
-                            courseDetails : courseResult?.courseDetails
+                            courseDetails : {
+                                ...courseResult?.courseDetails,
+                                totalRatings : ratingsResult?.totalRatings,
+                                averageRatings : ratingsResult?.averageRatings
+                            },
                         }
                     }
 
@@ -50,6 +57,7 @@ const TopCourses = () => {
     } , [])
 
     if(!topCourses.length) return
+    console.log(topCourses)
 
     return (
         <section className={styles['course-section']}>
@@ -65,8 +73,8 @@ const TopCourses = () => {
                             id={topCourse?._id}
                             title={topCourse?.courseDetails?.title}
                             educatorName={topCourse?.courseDetails?.educator.fullname}
-                            averageRatings={4.5}
-                            totalRatings={20202}
+                            averageRatings={topCourse?.courseDetails?.averageRatings}
+                            totalRatings={topCourse?.courseDetails?.totalRatings}
                             price={topCourse?.courseDetails?.price}
                         />
                     ))

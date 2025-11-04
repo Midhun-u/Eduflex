@@ -53,7 +53,6 @@ const CourseList = () => {
         }
 
     }
-    console.log(courses)
 
     useEffect(() => {
 

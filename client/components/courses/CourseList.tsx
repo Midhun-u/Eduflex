@@ -40,6 +40,8 @@ const CourseList = () => {
                 if (result?.totalCount) {
                     setPagination({ ...pagination, totalCount: result?.totalCount })
                 }
+
+                return
             }
 
             dispatch(courseSuccess({courses : []}))
@@ -51,6 +53,7 @@ const CourseList = () => {
         }
 
     }
+    console.log(courses)
 
     useEffect(() => {
 
@@ -76,7 +79,7 @@ const CourseList = () => {
                 }
                 <div className={styles['course-list']}>
                     {
-                        courses.length
+                        courses?.length
                         ?
                         courses?.map((course) => (
 

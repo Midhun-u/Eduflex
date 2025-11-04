@@ -124,6 +124,21 @@
 
         li{
             font-size: 13px;
+            list-style: none;
+            position: relative;
+            display: flex;
+            padding-left: 10px;
+
+            &::before{
+                content: '';
+                width: 5px;
+                height: 5px;
+                position: absolute;
+                left: 0px;
+                background-color: variables.$primary-color;
+                border-radius: 50%;
+                margin-top: 6px;
+            }
 
             &:first-child{
                 margin-top: 10px;

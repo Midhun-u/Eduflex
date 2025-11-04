@@ -10,6 +10,7 @@ import { useAppSelector } from '@/store/hooks'
 import { useDispatch } from 'react-redux'
 import { courseFailed, courseRequest, courseSuccess } from '@/store/courseSlice'
 import Spinner from '../ui/Spinner'
+import NotFound from '../layout/NotFound'
 
 
 const CourseList = () => {
@@ -75,6 +76,8 @@ const CourseList = () => {
                 }
                 <div className={styles['course-list']}>
                     {
+                        courses.length
+                        ?
                         courses?.map((course) => (
 
                             <CourseCard
@@ -89,6 +92,8 @@ const CourseList = () => {
                             />
 
                         ))
+                        :
+                        <NotFound />
                     }
                 </div>
                 {

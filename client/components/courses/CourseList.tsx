@@ -41,6 +41,8 @@ const CourseList = () => {
                 }
             }
 
+            dispatch(courseSuccess({courses : []}))
+
         } catch (error: any) {
             dispatch(courseFailed({ error: error.message }))
             console.log(error)

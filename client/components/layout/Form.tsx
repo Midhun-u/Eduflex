@@ -35,7 +35,7 @@ const Form = ({ submitButtonTitle, children, signForm }: FormProps) => {
     const router = useRouter()
     const passwordPlaceholder = signForm ? "Create new password" : "Enter your password"
 
-    //submit form
+    //Function for submitting form
     const submitForm = async (event: FormEvent) => {
 
         dispatch(authRequest())
@@ -79,7 +79,7 @@ const Form = ({ submitButtonTitle, children, signForm }: FormProps) => {
             } else {
 
                 const result: { success: true, message: string } = await loginApi(email, password)
-
+                
                 if (result.success) {
                     dispatch(authSuccess({ message: result.message }))
                     toast.success(message)

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Eduflex",
   description: "Learning Management System",
   icons : {
-    icon : "/logo.svg"
+    icon : "/assets/logo/logo.png"
   }
 }
 

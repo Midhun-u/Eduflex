@@ -9,7 +9,7 @@ import {
     Mail as EmailIcon,
     Shield as VerifiedIcon,
     Calendar as DateIcon,
-    MoveLeft as BackIcon,
+    ChevronLeft as BackIcon,
     CameraIcon
 } from 'lucide-react'
 import { convertFormatDate } from '@/utils/convertDate'

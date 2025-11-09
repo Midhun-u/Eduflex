@@ -247,7 +247,7 @@ const ProfileScreen = ({ setScreen }: ProfileScreenProps) => {
                             />
                             <div>
                                 <p>Account status</p>
-                                <span>verified</span>
+                                <span>Verified</span>
                             </div>
                         </div>
                     </div>

@@ -14,6 +14,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Eduflex",
   description: "Learning Management System",
+  icons : {
+    icon : "/logo.svg"
+  }
 }
 
 export default function RootLayout({
@@ -23,9 +26,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" type="image/png" href="/assets/logo/logo.png" />
-      </head>
       <body className={`${poppins.variable}`}>
         <ReduxProvider>
           {children}

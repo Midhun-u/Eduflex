@@ -30,7 +30,7 @@ const RateSection = () => {
 
     try {
 
-      if (rateNumber && courseId) {
+      if (rateNumber && courseId && comment) {
         const rateResult = await addRateApi(courseId as string, rateNumber, comment)
 
         if (rateResult?.success && rateResult?.rateDetails?.userId) {
@@ -50,6 +50,10 @@ const RateSection = () => {
 
           }
         }
+      }
+
+      if(!comment){
+        toast.error("Must add comment")
       }
 
     } catch (error) {

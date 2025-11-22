@@ -1,8 +1,8 @@
 import { app, port } from "./src/server";
 
-console.log(`Server running on ${port}`)
+console.log(`Server running on ${port}`);
 
 Bun.serve({
-    fetch : app.fetch,
-    port : port
-})
+  fetch: app.fetch,
+  port: port,
+});
